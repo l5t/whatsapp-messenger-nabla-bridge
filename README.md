@@ -8,8 +8,11 @@ This repo contains functions which handle the whatsapp and messenger integration
 - `npm install axios`
 - `npm install dotenv`
 - `npm install process`
+- `npm install twilio`
 
 ## Run
+
+Either do this
 
 - `export NABLA_API_KEY="<NABLA_API_KEY>"`
 - `export NABLA_API_SECRET_KEY="<NABLA_API_SECRET_KEY>"`
@@ -19,6 +22,9 @@ This repo contains functions which handle the whatsapp and messenger integration
 - `export MESSENGER_ACCESS_TOKEN="<MESSENGER_ACCESS_TOKEN>"`
 - `export MESSENGER_VERIFY_TOKEN="<MESSENGER_VERIFY_TOKEN>"`
 - `export PAGE_ACCESS_TOKEN="<PAGE_ACCESS_TOKEN>"`
+
+Or link your the current folder to an existing Netlify project with `netlify link` (see deploy below)
+
 - `netlify dev`
 - The above command will output `Function server is listening on <PORT>`
 - To run a function, make a POST request to `http://localhost:<PORT>/<FUNCTION>`
