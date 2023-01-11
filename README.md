@@ -13,7 +13,7 @@ To build a Messenger bridge in a few minutes, follow [this guide](https://gist.g
 
 - MESSENGER_ACCESS_TOKEN
 - MESSENGER_VERIFY_TOKEN
-- PAGE_ACCESS_TOKEN only if you want to use the Persona API to make ([This is currently available only outside of EU and Japan](https://developers.facebook.com/docs/messenger-platform/europe-japan-updates))
+- PAGE_ACCESS_TOKEN only if you want to use the Persona API to display the name and profile picture of the Nabla provider ([This is currently available only outside of EU and Japan](https://developers.facebook.com/docs/messenger-platform/europe-japan-updates))
 
 ### WhatsApp bridge
 
