@@ -1,6 +1,12 @@
 # whatsapp-messenger-nabla-bridge
 
-This repo contains functions which handle the whatsapp and messenger integration
+This repo contains functions which handle the whatsapp and messenger integration. You can deploy it directly to Netlify and use it in a few minutes following [this guide](https://gist.github.com/l5t/674b4ab951e8171031499e15aa5558f7).
+
+## Deploy to Netlify
+
+You can deploy this bridge as a Netlify function by clicking this button.
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/l5t/whatsapp-messenger-nabla-bridge)
 
 ## Install
 
