@@ -1,6 +1,25 @@
 # whatsapp-messenger-nabla-bridge
 
-This repo contains functions which handle the whatsapp and messenger integration. You can deploy it directly to Netlify and use it in a few minutes following [this guide](https://gist.github.com/l5t/674b4ab951e8171031499e15aa5558f7).
+This repo contains functions which handle the whatsapp and messenger integration. You can deploy it directly to Netlify.
+
+You will need the following Nabla keys from the Nabla Console developers section
+
+- NABLA_API_KEY: you can create one in the Nabla Console (/developers/api-keys/server)
+- NABLA_API_SECRET_KEY: you will get one when you create your webhook in the Nabla Console (/developers/webhooks)
+
+**Messenger bridge**
+To build a Messenger bridge in a few minutes, follow [this guide](https://gist.github.com/l5t/674b4ab951e8171031499e15aa5558f7) to get the following info
+
+- MESSENGER_ACCESS_TOKEN
+- MESSENGER_VERIFY_TOKEN
+- PAGE_ACCESS_TOKEN only if you want to use the Persona API to make ([This is currently available only outside of EU and Japan](https://developers.facebook.com/docs/messenger-platform/europe-japan-updates))
+
+**WhatsApp bridge**
+To build a WhatsApp bridge in a few minutes, you will need these info from Twilio. Note that you can use [Whatsapp directly](https://developers.facebook.com/docs/whatsapp/cloud-api) or another [Business Solution Provider](https://www.facebook.com/business/partner-directory/search?solution_type=messaging&platforms=whatsapp).
+
+- TWILIO_ACCOUNT_SID
+- TWILIO_AUTH_TOKEN
+- TWILIO_WA_NUMBER
 
 ## Deploy to Netlify
 
@@ -29,7 +48,7 @@ Either do this
 - `export MESSENGER_VERIFY_TOKEN="<MESSENGER_VERIFY_TOKEN>"`
 - `export PAGE_ACCESS_TOKEN="<PAGE_ACCESS_TOKEN>"`
 
-Or link your the current folder to an existing Netlify project with `netlify link` (see deploy below)
+Or link your the current folder to an existing Netlify project with `netlify link` to retrieve these env variables directly from Netlify (see deploy below).
 
 - `netlify dev`
 - The above command will output `Function server is listening on <PORT>`
