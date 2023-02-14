@@ -99,8 +99,9 @@ class MessengerHelper {
   }
 
   static getFBProfile = async function (senderFbId) {
+    console.log(`${FACEBOOK_IDENTITY_URL}${senderFbId}${FACEBOOK_IDENTITY_ENDPOINT}`);
     const response = await axios.get(`${FACEBOOK_IDENTITY_URL}${senderFbId}${FACEBOOK_IDENTITY_ENDPOINT}`, { headers: MESSENGER_HEADERS }).catch((err) => {
-      console.log(`Error: can't call idendity graphql with id: ${senderFbId}`)
+      console.log(`Error: can't call identity graphql with id: ${senderFbId}`)
       return null;
     });
 

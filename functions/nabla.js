@@ -25,6 +25,7 @@ exports.handler = async function (event, context) {
 
   try {
     const body = JSON.parse(event.body);
+    console.log("body.type", body.type)
     switch (body.type) {
       case "conversation.message.created":
         //only send messages from provider to avoid the echo of the patient messafge

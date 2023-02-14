@@ -12,7 +12,7 @@ You will need the following Nabla keys from the Nabla Console developers section
 To build a Messenger bridge in a few minutes, follow [this guide](https://gist.github.com/l5t/674b4ab951e8171031499e15aa5558f7) to get the following info
 
 - MESSENGER_ACCESS_TOKEN
-- MESSENGER_VERIFY_TOKEN
+- MESSENGER_VERIFY_TOKEN: you can
 - PAGE_ACCESS_TOKEN only if you want to use the Persona API to display the name and profile picture of the Nabla provider ([This is currently available only outside of EU and Japan](https://developers.facebook.com/docs/messenger-platform/europe-japan-updates))
 
 ### WhatsApp bridge
