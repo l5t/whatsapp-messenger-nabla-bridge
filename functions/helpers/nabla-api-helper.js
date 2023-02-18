@@ -53,6 +53,36 @@ class NablaAPIHelper {
     }
   };
 
+  static getPatientByUsername = async function (username) {
+    const getPatientByUsernamelUrl = `${NABLA_PATIENTS_API_ENDPOINT}?username=${username}`;
+    const response = await axios.get(getPatientByUsernamelUrl, { headers: NABLA_HEADERS }).catch((err) => {
+      console.log(`Error: can't get the Nabla patient with username`, err)
+      return null;
+    });
+
+    if (response && response.status === 200 && response.data !== null && response.data["data"] !== null && response.data["data"].length > 0) {
+      const patients = response.data["data"];
+      return patients[0];
+    } else {
+      return null;
+    }
+  };
+
+  static getPatientByEmail = async function (email) {
+    const getPatientByEmailUrl = `${NABLA_PATIENTS_API_ENDPOINT}?email=${email}`;
+    const response = await axios.get(getPatientByEmailUrl, { headers: NABLA_HEADERS }).catch((err) => {
+      console.log(`Error: can't get the Nabla patient with email`, err)
+      return null;
+    });
+
+    if (response && response.status === 200 && response.data !== null && response.data["data"] !== null && response.data["data"].length > 0) {
+      const patients = response.data["data"];
+      return patients[0];
+    } else {
+      return null;
+    }
+  };
+
   static updatePatient = async function (id, firstName, lastName, username, locale, email, phone, dateOfBirth, sex) {
     const putPatientUrl = `${NABLA_PATIENTS_API_ENDPOINT}/${id}`;
     const body = {
@@ -97,10 +127,10 @@ class NablaAPIHelper {
     if (email)
       body.email = email;
     if (phone)
-      body.phone = phone;
+      body.email = phone;
 
     const response = await axios.post(NABLA_PATIENTS_API_ENDPOINT, body, { headers: NABLA_HEADERS }).catch((err) => {
-      console.log(`Error: can't create the Nabla patient with email: ${email}`)
+      console.log(`Error: can't create the Nabla patient with`, err)
       return null;
     });
 

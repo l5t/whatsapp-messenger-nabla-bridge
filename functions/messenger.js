@@ -54,8 +54,8 @@ exports.handler = async (event, context) => {
 };
 
 const getOrCreatePatient = async function (sender) {
-  // Hack using the nabla phone to store the fbid
-  let patient = await NablaAPIHelper.getPatientByPhone(sender);
+  // Hack using the nabla username to store the fbid
+  let patient = await NablaAPIHelper.getPatientByUsername(sender);
   if (!patient) {
     const profile = await MessengerHelper.getFBProfile(sender);
     patient = await NablaAPIHelper.createPatientFromMessenger(profile.first_name, profile.last_name, null, sender);
