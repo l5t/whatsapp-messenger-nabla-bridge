@@ -79,19 +79,16 @@ const sendMessage = async function (data) {
 
       if (data.attachment) {
         // Send media to messenger
-        // await MessengerHelper.sendMedia(conversation.patients[0].phone, data.attachment.mime_type, data.attachment.ephemeral_url.url, persona ? persona.id : null)
-        await MessengerHelper.sendMedia(conversation.patients[0].custom_fields.fbid, data.attachment.mime_type, data.attachment.ephemeral_url.url, persona ? persona.id : null)
+        await MessengerHelper.sendMedia(conversation.patients[0].username, data.attachment.mime_type, data.attachment.ephemeral_url.url, persona ? persona.id : null)
 
       }
       else {
         // Send new message to messenger
         console.log("send message on messenger:", `${data.text}`, " by:", displayDoctorName);
         if (persona && persona.id)
-          // await MessengerHelper.sendTextMessage(conversation.patients[0].phone, data.text, persona.id);
-          await MessengerHelper.sendTextMessage(conversation.patients[0].custom_fields.fbid, data.text, persona.id);
+          await MessengerHelper.sendTextMessage(conversation.patients[0].username, data.text, persona.id);
         else
-          // await MessengerHelper.sendTextMessage(conversation.patients[0].phone, displayDoctorName ? `${displayDoctorName}\r\n\n${data.text}` : data.text, null);
-          await MessengerHelper.sendTextMessage(conversation.patients[0].custom_fields.fbid, displayDoctorName ? `${displayDoctorName}\r\n\n${data.text}` : data.text, null);
+          await MessengerHelper.sendTextMessage(conversation.patients[0].username, displayDoctorName ? `${displayDoctorName}\r\n\n${data.text}` : data.text, null);
       }
       break;
     default:

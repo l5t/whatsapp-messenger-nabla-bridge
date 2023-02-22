@@ -118,7 +118,7 @@ class NablaAPIHelper {
     return response.data;
   };
 
-  static createPatientFromMessenger = async function (firstName, lastName, email, phone) {
+  static createPatientFromMessenger = async function (firstName, lastName, email, username) {
     const body = {
       "first_name": firstName,
       "last_name": lastName,
@@ -126,11 +126,11 @@ class NablaAPIHelper {
     };
     if (email)
       body.email = email;
-    if (phone)
-      body.email = phone;
+    if (username)
+      body.username = username;
 
     const response = await axios.post(NABLA_PATIENTS_API_ENDPOINT, body, { headers: NABLA_HEADERS }).catch((err) => {
-      console.log(`Error: can't create the Nabla patient with`, err)
+      console.log(`Error: can't create the Nabla patient with username`, err)
       return null;
     });
 
